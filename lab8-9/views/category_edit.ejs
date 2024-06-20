@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Редагування</title>
+</head>
+
+<body>
+    <h1 class="text-center">Редагувати категорію</h1>
+    <form action="" method="POST" class="text-center">
+        <div class="mb-3">
+            <label class="form-label">
+                ID категорії
+                <input type="number" placeholder="id" class="form-control" id="category_id" name="category_id" min="1"
+                    value="<%= Category[0].category_id %>">
+            </label>
+            <label class="form-label">
+                Назва категорії
+                <input type="text" class="form-control" placeholder="Назва" id="name" name="name" style="width:300px"
+                    value="<%= Category[0].name %>">
+            </label>
+            <label class="form-label">
+                Опис категорії
+                <input type="text" class="form-control" placeholder="Опис" id="description" name="description"
+                    style="width:300px" value="<%= Category[0].description %>">
+            </label>
+        </div>
+        <button type="submit" class="btn btn-primary" formaction="/api/category/put/<%= Category[0].category_id %>">
+            Редагувати
+        </button>
+    </form>
+    <a class="btn btn-info" href="/api/category">Повернутися</a>
+</body>
+
+</html>
